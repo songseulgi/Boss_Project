@@ -51,7 +51,7 @@ namespace BTCDProject
 
             cmd.Parameters.AddWithValue("@user_id", user_id);
             cmd.Parameters.AddWithValue("@name", user_name.Text);
-            cmd.Parameters.AddWithValue("@name2", user_name2.Text);
+            cmd.Parameters.AddWithValue("@name2", user_name2.Text); 
             cmd.Parameters.AddWithValue("@cal_date1", cal_Date1.Text);
             cmd.Parameters.AddWithValue("@cal_date2", cal_Date2.Text);
             cmd.Parameters.AddWithValue("@term2", term2.Text);
