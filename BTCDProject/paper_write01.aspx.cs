@@ -37,7 +37,7 @@ namespace BTCDProject
         // 등록 버튼 클릭시 실행되는 function -> 좀 길게 많이 진행되어야 할 부분이다
         protected void okBtn_Click(object sender, EventArgs e)
         {
-            string max = "";
+            string max = ""; 
             string source = @"Server=localhost;uid=sa;pwd=Sb11011101;database=ReportDB";
 
             //1. db 연결
