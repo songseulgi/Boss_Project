@@ -1,0 +1,41 @@
+﻿@media print {
+
+    div.wrapper {
+        margin: 0;
+    }
+
+    div.header {
+        display: none;
+    }
+
+    div.nav {
+        display: none;
+    }
+
+    div.content {
+        visibility: visible;
+        position: relative;
+        zoom: 1.56;
+        left: 0;
+        right: 0;
+        margin: auto auto;
+        float: none;
+    }
+
+        div.content * {
+            visibility: visible;
+        }
+
+        div.content table {
+            margin: 0;
+        }
+
+        div.content h2 {
+            margin: 1.5% 0;
+            text-align: center;
+        }
+
+    div.btn_group {
+        display: none !important;
+    }
+}

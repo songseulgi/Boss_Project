@@ -1,0 +1,254 @@
+﻿@CHARSET "UTF-8";
+
+BODY {
+    padding:0;margin:0;font-family:NanumBarunGothic;height:100%
+
+}
+#Container {
+    min-width:1280px;
+}
+
+.headerwrap {
+    float:left;
+    width:100%;
+}
+
+.Top_bar {
+    float:left;
+    width:100%;
+    background-color:#00bbcb;
+}
+
+a.com_logo {
+    float:left;
+    width:170px;
+    height:53px;
+    background:url('img/logo.png');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    margin:15px 30px;
+}
+
+#status {
+    float:right;
+    width:15%;
+    margin-right:30px;
+}
+
+.idLbl {
+    float:right;
+    color:#fff;
+    padding-top:50px;
+}
+
+.out_btn {
+    float:right;
+    margin-top:50px;
+    border:2px solid #fff;
+    background-color:#fff;
+    border-radius:5px;
+    color:#00bbcb;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.navimenu {
+    float:left;
+    width:230px;
+    background-color:#fff;
+    height:910px;
+    border-right:1px solid #808080;
+}
+
+.navimenu .menu_title {
+    float:left;
+    width:100%;
+}
+
+.navimenu .menu_title .write_icon {
+    float:left;
+    width:40px;
+    height:54px;
+    background:url('img/write.png');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    margin:15px 15px 15px 55px;
+}
+
+
+.navimenu .menu_title .list_icon {
+    float:left;
+    width:40px;
+    height:54px;
+    background:url('img/list.png');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    margin:15px 55px 15px 15px;
+}
+
+.contentBox {
+    float:left;
+    width:80%;
+}
+
+.contentBox .content {
+    float:left;
+    width:1040px;
+    margin:15px 60px;
+}
+
+.content .content_title {
+    float:left;
+    width:100%;
+    text-align:center;
+    font-size:15pt;
+    font-weight:bold;
+    
+}
+
+.content .content_att {
+    float:left;
+    width:100%;
+    padding:10px 10px;
+}
+
+.content_att .label {
+    float:left;
+    width:100%;
+    font-size:13pt;
+    padding-bottom:5px;
+}
+
+.content_att .yearsearch {
+    float:left;
+    width:200px;
+
+}
+img.ui-datepicker-trigger {
+    float:left;
+    width:20px;
+    height:20px;
+    margin:1px 5px 0 0;
+}
+.content_att span {
+    float:left;
+    margin:0 5px 0 0;
+}
+.content_att input[type=text]{
+    border:0;
+    border-bottom:1px solid #808080;
+    padding:3px 0;
+}
+
+.content_att .map_search {
+    float:left;
+    margin:5px 5px;
+}
+
+.map_search input[type=text] {
+    width:250px;
+    float:left;
+}
+
+.map_search .searchbtn {
+    float:left;
+    border:2px solid #00bbcb;
+    background-color:#fff;
+    padding:3px 10px;
+    margin:0 0 0 5px;
+    border-radius:5px;
+    color:#00bbcb;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.content_att .map_result {
+    float:left;
+    width:311px;
+    height:275px;
+    margin:0 5px;
+}
+
+.content_att .expensewrap {
+    float:left;
+    width:780px;
+}
+
+.content_att .expense_select {
+    float:left;
+    width:100%;
+    font-size:11pt;
+}
+.content_att .expense_select span {
+    float:left;
+    padding-top:2px;
+}
+.content_att .expense_select input[type=checkbox] {
+    float:left;
+}
+
+.expensewrap .select_result {
+    float:left;
+    width:100%;
+}
+.expensewrap .select_result .label{
+    float:left;
+    width:130px;
+    border-bottom:2px solid #808080;
+    text-align:center;
+    font-size:11pt;
+}
+
+#map {
+    float:left;
+    width:420px;
+    height:320px;
+    
+}
+.expensewrap .select_result input[type=text] {
+    float:left;
+    width:120px;
+    margin:5px 5px;
+}
+.content_att .bill_upload {
+    float:left;
+    width:780px;
+}
+.content_att .bill_upload input[type=file] {
+    float:left;
+    margin:5px 5px;
+    border:1px solid #808080;
+}
+
+.bottom_btn {
+    float:left;
+    width:100%;
+    margin:10px 0 5px 65px;
+}
+.bottom_btn .save_btn {
+    float:left;
+    border:2px solid #00bbcb;
+    background-color:#fff;
+    padding:3px 10px;
+    margin:0 0 0 5px;
+    border-radius:5px;
+    color:#00bbcb;
+    cursor:pointer;
+    font-weight:bold;
+}
+.bottom_btn .cancel_btn {
+    float:left;
+    border:2px solid #00bbcb;
+    background-color:#fff;
+    padding:3px 10px;
+    margin:0 0 0 5px;
+    border-radius:5px;
+    color:#00bbcb;
+    cursor:pointer;
+    font-weight:bold;
+}
+.btnhover:hover {
+    background-color: #00bbcb;
+    color: #fff;
+    font-weight: bold;
+}

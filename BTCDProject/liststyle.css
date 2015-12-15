@@ -1,0 +1,72 @@
+﻿table.type09 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+
+}
+table.type09 thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+    border-bottom: 3px solid #036;
+}
+table.type09 tbody th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}
+table.type09 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+.mainDiv {
+    width: 500px;
+}
+.wrapper {
+    width: 900px;
+    height: 900px;
+}
+
+.header {
+    width: 900px;
+    height: 50px;
+    float: left;
+}
+
+.nav {
+    width: 150px;
+    height: 850px;
+    float: left;
+}
+
+.content {
+    width: 750px;
+    height: 850px;
+    float: left;
+}
+
+#img {
+    width: 150px;
+    height: 50px;
+    float: left;
+    background-color: red;
+}
+#status {
+    width: 750px;
+    height: 50px;
+    float: left;
+    background-color: lemonchiffon;
+    text-align: right;
+}
+
+.btn {
+    width : 150px;
+    height: 100px;
+    float: left;
+}
