@@ -38,12 +38,23 @@
 
         });
     </script>
-    <script type="text/javascript"> //back key 방지
-        window.history.forward();
-        function noBack() { window.history.forward(); }
-    </script>
+    <script type="text/javascript">        //back key 방지
+        function back_event() {
+            if (event.keyCode == 8 ) { // 8 백스페이스
+                if (confirm("이전 페이지로 돌아가시겠습니다?") == true) {
+                    window.history.forward(-1);
+                }
+                else {
+                    return false;
+                }
+            }
+            else {
+                window.history.go(0);
+            }
+        }
+     </script>
 </head>
-<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+<body onkeydown="return back_event();">
     <form id="form1" runat="server">
         <div id="Container">
             <div class="headerwrap">
