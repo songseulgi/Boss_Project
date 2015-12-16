@@ -121,22 +121,31 @@ namespace BTCDProject {
         protected global::System.Web.UI.WebControls.Button search_btn;
         
         /// <summary>
-        /// user_name 컨트롤입니다.
+        /// user_name1 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox user_name;
+        protected global::System.Web.UI.WebControls.TextBox user_name1;
         
         /// <summary>
-        /// position 컨트롤입니다.
+        /// position1 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox position;
+        protected global::System.Web.UI.WebControls.TextBox position1;
+        
+        /// <summary>
+        /// pay_trans1 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pay_trans1;
         
         /// <summary>
         /// pay_toll1 컨트롤입니다.
@@ -193,6 +202,15 @@ namespace BTCDProject {
         protected global::System.Web.UI.WebControls.TextBox position2;
         
         /// <summary>
+        /// pay_trans2 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pay_trans2;
+        
+        /// <summary>
         /// pay_toll2 컨트롤입니다.
         /// </summary>
         /// <remarks>
@@ -247,6 +265,15 @@ namespace BTCDProject {
         protected global::System.Web.UI.WebControls.TextBox position3;
         
         /// <summary>
+        /// pay_trans3 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pay_trans3;
+        
+        /// <summary>
         /// pay_toll3 컨트롤입니다.
         /// </summary>
         /// <remarks>
@@ -299,6 +326,15 @@ namespace BTCDProject {
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox position4;
+        
+        /// <summary>
+        /// pay_trans4 컨트롤입니다.
+        /// </summary>
+        /// <remarks>
+        /// 자동 생성 필드입니다.
+        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pay_trans4;
         
         /// <summary>
         /// pay_toll4 컨트롤입니다.

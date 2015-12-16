@@ -18,7 +18,6 @@ namespace BTCDProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             // ***************** list와 write 그리고 result 페이지에 공통적으로 들어가서 체크되어야 할 부분 ***************** 
             // 세션의 값이 존재하는지 확인 -> 즉 로그인이 되어있는가 확인
 
@@ -29,136 +28,66 @@ namespace BTCDProject
             }
             else                                                  // 세션에 값이 들어있지 않다면 (로그인 실패)
             {
-                Response.Redirect("./login.aspx");                // 로그인창으로 redirect를 걸어준다
+                /*Response.Redirect("./login.aspx");*/                // 로그인창으로 redirect를 걸어준다
             }
             // **********************************************************************************************************
 
-            report_id = Request.QueryString["report_id"];
-            page_num = Request.QueryString["page_num"];
+            //report_id = Request.QueryString["report_id"];
+            //page_num = Request.QueryString["page_num"];
             userLbl.Text = id_value;
 
-            string source = @"Server=localhost;uid=sa;pwd=Sb11011101;database=ReportDB";
+            // Server.UrlDecode를 써주는 이유는 한글이 깨지는것을 방지하기 위함
+            name.Text = Server.UrlDecode(Request.Cookies["user_name1"].Value); // 기안자
+            // 소속
+            position.Text = Server.UrlDecode(Request.Cookies["position1"].Value); // 직위
+            term1.Text = Request.Cookies["cal_date1"].Value; // 출장기간
 
-            // 1. db 연결
-            SqlConnection conn = new SqlConnection(source);
-            conn.Open();
+            // 교통수단 체크 유무
 
-            // 2. 명령어
-            string sql = "SELECT * FROM REPORTTBL WHERE report_id=" + report_id;
-            SqlCommand cmd = new SqlCommand(sql, conn);
-
-            // 3. 명령어 실행
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            // 4. 페이지에 보여주기
-
-            try
+            if (Request.Cookies["carCck"].Value.Equals("1"))
             {
-                while (reader.Read())
-                {
-                    this.name.Text = reader["name"].ToString();
-                    this.company.Text = reader["company"].ToString();
-                    this.position.Text = reader["position"].ToString();
-                    this.term1.Text = reader["term1"].ToString();
-                    this.term2.Text = reader["term2"].ToString();
-                    this.location1.Text = reader["location1"].ToString();
-                    this.location2.Text = reader["location2"].ToString();
-                    this.memo1.Text = reader["memo1"].ToString();
-                    this.pay_trans1.Text = reader["pay_trans1"].ToString();
-                    this.pay_trans2.Text = reader["pay_trans2"].ToString();
-                    this.pay_toll1.Text = reader["pay_toll1"].ToString();
-                    this.pay_toll2.Text = reader["pay_toll2"].ToString();
-                    this.pay_room1.Text = reader["pay_room1"].ToString();
-                    this.pay_room2.Text = reader["pay_room2"].ToString();
-                    this.pay_food1.Text = reader["pay_food1"].ToString();
-                    this.pay_food2.Text = reader["pay_food2"].ToString();
-                    this.pay_work1.Text = reader["pay_work1"].ToString();
-                    this.pay_work2.Text = reader["pay_work2"].ToString();
-                    this.pay_total1.Text = reader["pay_total1"].ToString();
-                    this.pay_total2.Text = reader["pay_total2"].ToString();
-                  //  this.label_memo1.Text = reader["label_memo1"].ToString();
-                    this.label_memo2.Text = reader["label_memo2"].ToString();
-                    this.label_memo3.Text = reader["label_memo3"].ToString();
-                    this.label_memo4.Text = reader["label_memo4"].ToString();
-                }
-            }
-            catch (Exception ee)
-            {
-                Response.Write(ee.Message);
+                carCck.Checked = true;
             }
 
-            // 5. db close
-            reader.Close();
-
-
-            // 상단 체크값 가져오기
-            string sql3 = "SELECT CAR, TRAIN, BUS, BOAT, AIR, START, DEPARTURE FROM TRANSPORT WHERE REPORT_ID=" + report_id;
-            SqlCommand cmd3 = new SqlCommand(sql3, conn);
-            reader = cmd3.ExecuteReader();
-
-            while (reader.Read())
+            if (Request.Cookies["trainCck"].Value.Equals("1"))
             {
-                if (reader["car"].ToString().Equals("1"))
-                {
-                    carCck.Checked = true;
-                }
-
-                if (reader["train"].ToString().Equals("1"))
-                {
-                    trainCck.Checked = true;
-                }
-
-                if (reader["bus"].ToString().Equals("1"))
-                {
-                    busCck.Checked = true;
-                }
-
-                if (reader["boat"].ToString().Equals("1"))
-                {
-                    boatCck.Checked = true;
-                }
-
-                if (reader["air"].ToString().Equals("1"))
-                {
-                    airCck.Checked = true;
-                }
-
-                start1.Text = reader["start"].ToString();
-                end.Text = reader["departure"].ToString();
+                trainCck.Checked = true;
             }
 
-            reader.Close();
-
-            // 하단 체크값 가져오기
-            string sql2 = "SELECT * FROM ATTACH_GROUP WHERE REPORT_ID=" + report_id;
-            SqlCommand cmd2 = new SqlCommand(sql2, conn);
-            reader = cmd2.ExecuteReader();
-
-            while (reader.Read())
+            if (Request.Cookies["busCck"].Value.Equals("1"))
             {
-                if (reader["card_bill"].ToString().Equals("1"))
-                {
-                    card_bill.Checked = true;
-                }
-
-                if (reader["toll_bill"].ToString().Equals("1"))
-                {
-                    toll_bill.Checked = true;
-                }
-
-                if (reader["transe_bill"].ToString().Equals("1"))
-                {
-                    transe_bill.Checked = true;
-                }
-
-                if (reader["etc_bill"].ToString().Equals("1"))
-                {
-                    etc_bill.Checked = true;
-                }
+                busCck.Checked = true;
             }
 
-            reader.Close();
-            conn.Close();
+            if (Request.Cookies["boatCck"].Value.Equals("1"))
+            {
+                boatCck.Checked = true;
+            }
+
+            if (Request.Cookies["airCck"].Value.Equals("1"))
+            {
+                airCck.Checked = true;
+            }
+
+            // 영수증 체크 유무
+            if (Request.Cookies["card_bill"].Value.Equals("1"))
+            {
+                card_bill.Checked = true;
+            }
+            if (Request.Cookies["toll_bill"].Value.Equals("1"))
+            {
+                toll_bill.Checked = true;
+            }
+            if (Request.Cookies["transe_bill"].Value.Equals("1"))
+            {
+                transe_bill.Checked = true;
+            }
+            if (Request.Cookies["etc_bill"].Value.Equals("1"))
+            {
+                etc_bill.Checked = true;
+            }
+
+
         }
 
         // 돌아가기 버튼클릭
