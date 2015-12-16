@@ -12,7 +12,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
     <script src="https://apis.daum.net/maps/maps3.js?apikey=f333e298a02ed205a65a9b5858c36d21&libraries=services"></script>
-  
+
     <script>
         $(document).ready(function () {
             $("#cal_Date1").datepicker({
@@ -38,9 +38,12 @@
 
         });
     </script>
-
+    <script type="text/javascript"> //back key 방지
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+    </script>
 </head>
-<body>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <form id="form1" runat="server">
         <div id="Container">
             <div class="headerwrap">
@@ -168,8 +171,8 @@
                     </div>
                 </div>
                 <div class="bottom_btn">
-                    <asp:Button ID="save" runat="server" Text="등록" Cssclass="save_btn btnhover" OnClick="save_Click"/>
-                    <asp:Button ID="cancel" runat="server" Text="취소" Cssclass="cancel_btn btnhover" />
+                    <asp:Button ID="save" runat="server" Text="등록" CssClass="save_btn btnhover" OnClick="save_Click" />
+                    <asp:Button ID="cancel" runat="server" Text="취소" CssClass="cancel_btn btnhover" />
                 </div>
             </div>
         </div>

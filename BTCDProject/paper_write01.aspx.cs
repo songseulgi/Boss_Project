@@ -258,4 +258,5 @@ namespace BTCDProject
             Response.Redirect("./paper_write.aspx");
         }
     }
+
 }

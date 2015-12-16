@@ -36,8 +36,12 @@
             });
         });
     </script>
+    <script type="text/javascript"> //back key 방지
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+    </script>
 </head>
-<body>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <!-- 명령서 작성페이지 -->
     <form id="form1" runat="server">
         
