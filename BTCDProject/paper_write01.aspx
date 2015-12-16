@@ -163,7 +163,7 @@
                     </div>
                 </div>
                 <div class="bottom_btn">
-                    <asp:Button ID="save" runat="server" Text="등록" Cssclass="save_btn btnhover"/>
+                    <asp:Button ID="save" runat="server" Text="등록" Cssclass="save_btn btnhover" OnClick="save_Click"/>
                     <asp:Button ID="cancel" runat="server" Text="취소" Cssclass="cancel_btn btnhover" />
                 </div>
             </div>

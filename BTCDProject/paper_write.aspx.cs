@@ -18,6 +18,7 @@ namespace BTCDProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             // ***************** list와 write 그리고 result 페이지에 공통적으로 들어가서 체크되어야 할 부분 ***************** 
             // 세션의 값이 존재하는지 확인 -> 즉 로그인이 되어있는가 확인
 
@@ -75,7 +76,7 @@ namespace BTCDProject
                     this.pay_work2.Text = reader["pay_work2"].ToString();
                     this.pay_total1.Text = reader["pay_total1"].ToString();
                     this.pay_total2.Text = reader["pay_total2"].ToString();
-                    this.label_memo1.Text = reader["label_memo1"].ToString();
+                  //  this.label_memo1.Text = reader["label_memo1"].ToString();
                     this.label_memo2.Text = reader["label_memo2"].ToString();
                     this.label_memo3.Text = reader["label_memo3"].ToString();
                     this.label_memo4.Text = reader["label_memo4"].ToString();
