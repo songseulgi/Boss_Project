@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "~/Areas/Company/Views/Shared/_MainLayout.cshtml";
+}
+
+<script>
+
+
+
+    $(document).ready(function () {
+        //top menu
+        $('#naviwrap_biz > .navi_biz > a.navi_report').addClass('on');
+        //Accounting menu
+        $('#sub_leftwrap > .sub_gnbwrap > ul > li > a.gnb_basicsurvey').addClass('on');
+
+        $('#SelectQuestion').change(function () {
+            SelectQuestionProc();
+        });
+
+        $('#SelectQuestion').ready(function () {
+            SelectQuestionProc();
+        });
+    });
+
+    function SelectQuestionProc() {
+        $('#write').hide();
+        $('#view').hide();
+        var selectQuestion = $("#SelectQuestion");
+        var value = selectQuestion.val();
+        var arrValue = value.split("#");
+
+        $('#btWriter').attr("QuestionSn", arrValue[0]);
+        $('#btView').attr("QuestionSn", arrValue[0]);
+
+        $('#questionSn').val(arrValue[0]);
+        $('#status').val(arrValue[1]);
+
+        if (arrValue[1] == "P")
+            $('#write').show();
+        else
+            $('#view').show();
+    }
+
+</script>
+
+
+<div id="sub_rightwrap_report">
+
+    <div class="sub_right_title specialist_02_02">
+        <em>기초경영역량 문진표</em>
+    </div>
+@using (Html.BeginForm("Summary01", "Report", FormMethod.Get, new { area = "Company", @class = "form-horizontal", role = "form", id = "mainForm" }))
+{
+    @Html.Hidden("questionSn")
+    @Html.Hidden("status")
+    <div id="sub_term_box">
+        @Html.DropDownList("QuestionList", ViewBag.SelectQuestionList as SelectList, new { @class = "year", id = "SelectQuestion" })
+        @*<div id="write">*@<button type="submit" id="write" class="report_write right" value="작성 하기">작성하기</button>@*</div>*@
+        @*<div id="view">*@<button type="submit" id="view" class="history_view right" value="내용 보기">내용보기</button>@*</div>*@
+    </div>
+}
+
+    <div class="sub_report_checkbox_min">
+
+        <div class="report_main_mid bold center margin_t60">
+            <a class="start end" href=""><em>시작 이미지</em></a><img src="~/images/start.png">
+            <p>
+                <br>회사의 기초역량을 검토하고, 검토한 결과를 토대로 회사의 성장 로드맵과
+                <br>성장전략을 제안하기 위해
+                설문 작성이 필요합니다.<br><br> 설문을 작성하시려면 상단의 "작성하기" 버튼을 눌러주세요
+            </p>
+        </div>
+
+
+
+
+    </div>
+    <!--custom_rightwrap//-->
+
+</div>
